@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NewComment from "./NewComment";
+import Comments from "./Comments";
+// import CreateUser from "./CreateUser";
+import UserInfo from "./UserInfo";
+import { AuthProvider } from "./auth";
+import LoginUser from "./LoginUser";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <div className="container mx-auto">
+        <div className=" border-b border-gray-200 flex justify-between items-center py-6">
+          <img src="./ComentaAki.png" alt="Comenta Aqui" className="w-32" />
+          <LoginUser />
+          <UserInfo />
+        </div>
+        <NewComment />
+        <Comments />
+        {/* <CreateUser /> */}
+      </div>
+    </AuthProvider>
   );
 }
 
